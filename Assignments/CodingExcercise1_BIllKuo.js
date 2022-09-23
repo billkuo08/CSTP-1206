@@ -9,7 +9,7 @@ getSum = (arr) => {
     }
     return sum;
 };
-console.log(getSum(MyArr));
+console.log(`The sum of the array is ${getSum(MyArr)}`);
 
 // 2. Using a function for loop print all even numbers up to n (parameter in function);
 console.log("\nQ2");
@@ -73,9 +73,10 @@ console.log("\nQ5");
 reportCard = (subj1 = 0, subj2 = 0, subj3 = 0, subj4 = 0) => {
     let subjects = [subj1, subj2, subj3, subj4];
     let total = 0;
-    var average = total / 4;
+    let average = 0;
     for (let score in subjects) {
         total += subjects[score];
+        average = total / subjects.length;        
     }
     if (average >= 90) {
         return "A";
@@ -89,7 +90,7 @@ reportCard = (subj1 = 0, subj2 = 0, subj3 = 0, subj4 = 0) => {
 
 }
 
-console.log(`The grade of the student is ${reportCard(90, 70, 50, 49)}`);
+console.log(`The grade of the student is ${reportCard(40,40,40,40)}`);
 console.log(`The grade of the student is ${reportCard(70, 70, 70, 70)}`);
 console.log(`The grade of the student is ${reportCard(90, 90, 90, 90)}`);
 console.log(`The grade of the student is ${reportCard(50, 50, 50, 50)}`);
