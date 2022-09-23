@@ -34,24 +34,26 @@ hasYandy = (x) => {
     let upY = str.includes("Y");
     if (lowY || upY) {
         return "YES";
-    } else {
-        return "Parameter must be a string"
+    }    
+    else {
+        return "Error";
     };
 
 };
 console.log(hasYandy("Crazy"));
 console.log(hasYandy("York"));
+console.log(hasYandy("hello"));
 console.log(hasYandy(0));
 
 
 // 4. Write a function to find the factorial of a given number n
 console.log("\nQ4");
-findFactorial = (n) => {
+findFactorial = (num) => {
     let answer = 1;
-    if (n == 0 || n == 1) {
+    if (num == 0 || num == 1) {
         return answer;
     } else {
-        for (let i = n; i >= 1; i--) {
+        for (let i = num; i >= 1; i--) {
             answer = answer * i;
         }
         return answer;
@@ -88,6 +90,12 @@ reportCard = (subj1 = 0, subj2 = 0, subj3 = 0, subj4 = 0) => {
 }
 
 console.log(`The grade of the student is ${reportCard(90, 70, 50, 49)}`);
+console.log(`The grade of the student is ${reportCard(70, 70, 70, 70)}`);
+console.log(`The grade of the student is ${reportCard(90, 90, 90, 90)}`);
+console.log(`The grade of the student is ${reportCard(50, 50, 50, 50)}`);
+
+
+
 
 
 // 6. Write a function which prints the star pattern like that for the given value n
@@ -99,6 +107,19 @@ console.log(`The grade of the student is ${reportCard(90, 70, 50, 49)}`);
 // *****
 // ******
 // *******
+console.log("\nQ6");
+
+starPattern = (numOfRow) => {
+    let starArr = []
+    for (let i = 0; i < numOfRow; i++) {
+        starArr.push("*");
+        console.log(starArr);
+
+    };
+
+}
+starPattern(7);
+
 
 // 7.
 
@@ -115,5 +136,38 @@ console.log(`The grade of the student is ${reportCard(90, 70, 50, 49)}`);
 // ***
 // **
 // *
+console.log("\nQ7");
+starPattern2 = (maxStar) => {
+    let starArr = []
+    for (let i = 0; i < maxStar; i++) {
+        starArr.push("*");
+        console.log(starArr);
+
+    };
+    for (let j = maxStar; j > 1; j--) {
+        starArr.pop();
+        console.log(starArr);
+
+    }
+
+}
+starPattern2(7);
+
 
 // 8. Write a function to reverse a string
+console.log("\nQ8");
+reverseStr = (y) => {
+
+    if (typeof (y) === 'string') {
+        let splitStr = y.split("");
+        let reverseArr = splitStr.reverse();
+        let reverseStr = reverseArr.join("");
+        return reverseStr;
+    } else {
+        return "Please enter a proper string";
+    }
+
+
+}
+
+console.log(reverseStr("Hello"));
