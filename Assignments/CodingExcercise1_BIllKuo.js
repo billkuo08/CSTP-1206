@@ -73,7 +73,7 @@ console.log("\nQ5");
 reportCard = (subj1 = 0, subj2 = 0, subj3 = 0, subj4 = 0) => {
     let subjects = [subj1, subj2, subj3, subj4];
     let total = 0;
-    var average = total / subjects.length;
+    var average = total / 4;
     for (let score in subjects) {
         total += subjects[score];
     }
@@ -109,13 +109,14 @@ console.log(`The grade of the student is ${reportCard(50, 50, 50, 50)}`);
 // *******
 console.log("\nQ6");
 
-starPattern = (numOfRow) => {
-    let starArr = []
-    for (let i = 0; i < numOfRow; i++) {
-        starArr.push("*");
-        console.log(starArr);
-
-    };
+starPattern = (rowOfStars) => {
+    let stars = "";
+    let i = 0;
+    while ( i < rowOfStars) {
+        stars += "*";
+        console.log(stars)
+        i++;
+    }
 
 }
 starPattern(7);
@@ -137,17 +138,20 @@ starPattern(7);
 // **
 // *
 console.log("\nQ7");
-starPattern2 = (maxStar) => {
-    let starArr = []
-    for (let i = 0; i < maxStar; i++) {
-        starArr.push("*");
-        console.log(starArr);
+starPattern2 = (rowOfStars) => {
+    let stars = "";
+    let i = 0;
+    while ( i < rowOfStars) {
+        stars += "*";
+        console.log(stars)
+        i++;
+    }
 
-    };
-    for (let j = maxStar; j > 1; j--) {
-        starArr.pop();
-        console.log(starArr);
-
+    let j = rowOfStars;
+    while ( j > 1){
+        stars = stars.slice(0,-1);
+        console.log(stars);
+        j--;
     }
 
 }
