@@ -19,5 +19,7 @@ function submitForm() {
 let updatedUserList = JSON.parse(localStorage.getItem("userList"));
 
 for (let i = 0 ; i < updatedUserList.length ; i++) {
+    updatedUserList[i];
+    
     
 }
