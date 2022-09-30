@@ -3,13 +3,13 @@ let userList = [];
 
 function submitForm() {
     let newRow = document.createElement("tr");
-    let newCell = document.createElement("td");
+    let newCell = document.createElement("td")//document.createElement("td");
 
 
     let data = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
-        studentID: document.getElementById("ID").value,
+        studentId: document.getElementById("ID").value,
     }
 
     // Saving new form submit data
@@ -19,14 +19,17 @@ function submitForm() {
     let updatedUserList = JSON.parse(localStorage.getItem("userList"));
 
     for (let i = 0; i < userList.length; i++) {
-       
-            newCell.innerHTML = updatedUserList[i].name ;
-        
+
+        newCell.innerHTML = 
+        `<pre>      ${updatedUserList[i].name}   ${updatedUserList[i].email}    ${updatedUserList[i].studentId}</pre>`;
+
     }
-    console.log(userList);
+    console.log(updatedUserList);
 
     newRow.append(newCell);
     document.getElementById("rows").appendChild(newRow);
 
 
 }
+// newCell.innerHTML = updatedUserList[i].name + "  " + 
+//         updatedUserList[i].email + "  " + updatedUserList[i].studentId;
