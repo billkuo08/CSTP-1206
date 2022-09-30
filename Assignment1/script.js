@@ -4,6 +4,7 @@ let userList = [];
 function submitForm() {
     let newRow = document.createElement("tr","td");
     let newCell = document.createElement("td")//document.createElement("td");
+    const mq = window.matchMedia("(max-width: 500px)")
 
 
     let data = {
@@ -22,7 +23,9 @@ function submitForm() {
         newCell.style.fontSize = "24px";
         newCell.innerHTML = 
         `<pre>${updatedUserList[i].name}&emsp;${updatedUserList[i].email}&emsp;${updatedUserList[i].studentId}</pre>`;
-
+        if (mq.matches){
+            newCell.style.fontSize = "12px";           
+        }
     }
     //console.log(updatedUserList);
 
@@ -31,5 +34,7 @@ function submitForm() {
 
 
 }
+
+
 // newCell.innerHTML = updatedUserList[i].name + "  " + 
 //         updatedUserList[i].email + "  " + updatedUserList[i].studentId;

@@ -1,3 +1,11 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 120);
+   
+}
+
+
+
 form {
     margin: auto;
     width: 250px;
@@ -5,12 +13,12 @@ form {
 
 table,
 th,
-td {
-    border: 1px solid black;
-    border-radius: 10px;
-    
+td,tr {
+    border: 1px solid rgb(255, 252, 252);
+    border-radius: 10px;    
     margin: auto;
     width: 250px;
+    border-color:white;
 }
 
 input {
@@ -29,5 +37,37 @@ label {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color:#544c87; 
+    text-align: center;
+    padding: 14px 40px;
+    font-family: Arial, Helvetica, sans-serif; 
+    display: inline-block;
+    font-size: 24px;
+    border-radius: 10px;
+    color:aliceblue;
 }
+
+@media screen and (max-width: 800px) {
+
+    form,
+    table,input,label {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 500px) {
+
+    form,
+    table,input,label {
+        width: 100%;
+       
+    }
+
+    label,input[type="text"], table{
+        font-size: 18px;
+
+    }
+
+}
+
+
