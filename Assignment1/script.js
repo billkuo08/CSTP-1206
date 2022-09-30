@@ -2,7 +2,7 @@ let userList = [];
 
 
 function submitForm() {
-    let newRow = document.createElement("tr");
+    let newRow = document.createElement("tr","td");
     let newCell = document.createElement("td")//document.createElement("td");
 
 
@@ -19,12 +19,12 @@ function submitForm() {
     let updatedUserList = JSON.parse(localStorage.getItem("userList"));
 
     for (let i = 0; i < userList.length; i++) {
-
+        newCell.style.fontSize = "24px";
         newCell.innerHTML = 
-        `<pre>      ${updatedUserList[i].name}   ${updatedUserList[i].email}    ${updatedUserList[i].studentId}</pre>`;
+        `<pre>${updatedUserList[i].name}&emsp;${updatedUserList[i].email}&emsp;${updatedUserList[i].studentId}</pre>`;
 
     }
-    console.log(updatedUserList);
+    //console.log(updatedUserList);
 
     newRow.append(newCell);
     document.getElementById("rows").appendChild(newRow);
