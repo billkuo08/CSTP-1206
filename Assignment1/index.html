@@ -13,7 +13,7 @@
 <!-- Take reference -->
 
 <body>
-    <form action="" onsubmit="submitForm()">
+    <form>
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" value="bill"><br>
         <label for="email">Email:</label><br>
@@ -21,27 +21,21 @@
         <label for="ID">Student ID:</label><br>
         <input type="text" id="ID" name="ID" value="000"><br>
         <!-- <button type="submit" onclick=""></button> -->
-        <button>Submit</button>
+        <button type="button" onclick="submitForm();">Submit Information</button> <br><br><br><br><br>
     </form>
 
-    <table id="table">
+    <table>
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Student_ID</th>
+            <th>Name, Email, Student</th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-
+        <tbody id="rows">
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
     </table>
+
+
 
 
 </body>

@@ -1,28 +1,32 @@
 let userList = [];
 
+
 function submitForm() {
+    let newRow = document.createElement("tr");
+    let newCell = document.createElement("td");
+
 
     let data = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
-        studentID:document.getElementById("ID").value,
+        studentID: document.getElementById("ID").value,
     }
 
     // Saving new form submit data
-     userList.push(data);
-    
-
-
+    userList.push(data);
     localStorage.setItem("userList", JSON.stringify(userList));
+    // You can get the userlist using
+    let updatedUserList = JSON.parse(localStorage.getItem("userList"));
 
-}
+    for (let i = 0; i < userList.length; i++) {
+       
+            newCell.innerHTML = updatedUserList[i].name ;
+        
+    }
+    console.log(userList);
 
-// You can get the userlist using
+    newRow.append(newCell);
+    document.getElementById("rows").appendChild(newRow);
 
-let updatedUserList = JSON.parse(localStorage.getItem("userList"));
-console.log(updatedUserList)
 
-for (let i = 0; i < updatedUserList.length; i++) {
-
-    
 }
