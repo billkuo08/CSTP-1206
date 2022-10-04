@@ -3,7 +3,7 @@ let userList = [];
 
 function submitForm() {
     let newRow = document.createElement("tr","td");
-    let newCell = document.createElement("td")//document.createElement("td");
+    let newCell = document.createElement("td")
     const mq = window.matchMedia("(max-width: 500px)")
 
 
@@ -27,7 +27,6 @@ function submitForm() {
             newCell.style.fontSize = "12px";           
         }
     }
-    //console.log(updatedUserList);
 
     newRow.append(newCell);
     document.getElementById("rows").appendChild(newRow);
@@ -36,5 +35,3 @@ function submitForm() {
 }
 
 
-// newCell.innerHTML = updatedUserList[i].name + "  " + 
-//         updatedUserList[i].email + "  " + updatedUserList[i].studentId;
