@@ -1,0 +1,25 @@
+{
+  "name": "cst-1206",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billkuo08/CSTP-1206.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/billkuo08/CSTP-1206/issues"
+  },
+  "homepage": "https://github.com/billkuo08/CSTP-1206#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
