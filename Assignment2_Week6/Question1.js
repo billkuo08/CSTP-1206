@@ -23,7 +23,7 @@ let student = [
 
 ]
 
-let highestOfSum = (data) => {
+const highestOfSum = (data) => {
     let marksArr = [];
     let sum = [];
     let max = 0;
