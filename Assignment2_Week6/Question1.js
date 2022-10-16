@@ -1,7 +1,7 @@
 
 let student = [
     {
-        name: "Danial",
+        name: "Daniel",
         email: "daniel@gmail.com",
         marks: [80, 60, 50, 70, 95]
     },
@@ -19,18 +19,18 @@ let student = [
         name: "Geri",
         email: "geri@gmail.com",
         marks: [100, 99, 95, 85, 99]
-    },
+    }
+];
 
-]
 
-const highestOfSum = (data) => {
+const studentWithHighestMarks = (array) => {
     let marksArr = [];
     let sum = [];
     let max = 0;
 
-    for (let key in data) {
+    for (let key in array) {
 
-        marksArr.push(data[key].marks);
+        marksArr.push(array[key].marks);
 
     }
 
@@ -46,27 +46,23 @@ const highestOfSum = (data) => {
             return Math.max(accumulator, currentValue);
         });
 
-
-
     }
-    //console.log(sum);
-    return max;
-
+    return max;    
 }
 
-console.log(highestOfSum(student));
+console.log(studentWithHighestMarks(student));
 
 
 
 /*
 
- // let sumOfMarks = (item) => {
-    //     sum += item;
-    // }
+    let sumOfMarks = (item) => {
+    sum += item;
+    }
 
-     // marksArr[i].forEach(sumOfMarks);    
-        // console.log(sum); 
-        // sum = 0; 
+    marksArr[i].forEach(sumOfMarks);    
+    console.log(sum); 
+    sum = 0; 
  */
 
 
