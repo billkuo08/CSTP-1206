@@ -25,7 +25,6 @@ const missingNumber = (n) => {
 
 
     array3.sort((a, b) => { return a - b });
-    console.log(array3)
 
     let missingNum = array3.filter((item) => {
         if (array3.indexOf(item) !== item) {
@@ -47,5 +46,5 @@ const missingNumber = (n) => {
 }
 
 console.log(`The missing number of the array is ${missingNumber(5)}\n`);
-//console.log(`The missing number of the array is ${missingNumber(10)}\n`);
+console.log(`The missing number of the array is ${missingNumber(10)}\n`);
 
