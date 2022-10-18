@@ -185,3 +185,60 @@ for (let key in obj) {
     console.log(obj[key]);
     // console.log(obj.key) We cannot do this since we are searching for "Key" and that doens't exist inside the obejct
 }
+
+//************************ */
+
+//FIND FUNCTION
+
+let numericArr = [5, 3, 4, 23, 11, 2];
+
+const foundValue = numericArr.find((num) => {
+    if(num === 23){
+        return true;
+    }
+});
+console.log(foundValue, "FOUND VALUE")
+
+
+const articles = [
+    {   
+        id: Math.random().toFixed(2),
+        title: "Latest Technologies",
+        author: "Pranh",
+        timeRequired: "2 minutes",
+        description: "This is an article for latest technologies for exmple = BlockChaub, IOT"
+    },
+
+    {   
+        id: Math.random().toFixed(2),
+        title: "Life in Vancouver",
+        author: "Pranh",
+        timeRequired: "1 minutes",
+        description: "Vancouver is known for its natural beauty"
+    },
+
+]
+
+const findArticle = articles.find((item) =>{
+if(item.timeRequired === "2 minutes"){
+    return true;
+}
+
+})
+console.log(findArticle, "FOUND VALUE")
+
+
+//FIND INDEX FUNCTION
+
+const index = articles.findIndex((article) => {
+    if(article.title === "Life in Vancouver"){
+        return true;
+    }
+})
+
+//SPLICE FUNCTION - Splice method can be used to either add or remove elements from the array
+
+let numA = [1, 2, 3, 4, 5]
+
+numA.splice(0, -0); // 12345
+numA.splice(3, 1);//1235

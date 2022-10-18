@@ -2,7 +2,15 @@ const express = require('express');
 
 const app = express();
 const PORT = 4000;
-const employeesArr = [];
+const employeesArr = [
+    {
+        "name": "Daniel",
+        "Biological_Gender": "Male",
+        "Employee_ID": "1",
+        "Position:": "Manager"     
+    
+    }
+];
 
 // Telling express that the data i am getting is of type JSON
 app.use(express.json());
