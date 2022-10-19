@@ -25,51 +25,57 @@ let student = [
 
 const studentWithHighestMarks = (array) => {
     let marksArr = [];
-    let sum = [];
-    let max = 0;
+    let sum = 0;
+    let sumArr = [];
 
     for (let key in array) {
-
         marksArr.push(array[key].marks);
+    }
 
+    let sumOfMarks = (item) => {
+        sum += item;
     }
 
     for (let i in marksArr) {
-
-        let sumOfArray = marksArr[i].reduce((accumulator, currentValue) => {
-            return accumulator + currentValue;
-        }, 0);
-
-        sum.push(sumOfArray);    
+        marksArr[i].forEach(sumOfMarks);
+        sumArr.push(sum)
+        sum = 0;
+        i++;
     }
+    console.log(sumArr)
 
-    max = sum.reduce((accumulator, currentValue) => {
-        return Math.max(accumulator, currentValue);
-    });
-    
-    return max;    
+    let maxValue = sumArr.reduce((accumulator, currentValue) => {
+        return accumulator > currentValue ? accumulator : currentValue
+    }, -Infinity)
+
+    return maxValue;
+
 }
 
 console.log(studentWithHighestMarks(student));
 
 
 
-/*
-
-    let sumOfMarks = (item) => {
-    sum += item;
-    }
-
-    marksArr[i].forEach(sumOfMarks);    
-    console.log(sum); 
-    sum = 0; 
- */
 
 
-/* 
 
-let maxValue = sum.reduce((accumulator, currentValue) => {
-    return accumulator >  currentValue ? accumulator : currentValue
- }, -Infinity)
- 
- */
+//  for (let key in array) {
+
+//     marksArr.push(array[key].marks);
+
+// }
+
+// for (let i in marksArr) {
+
+//     let sumOfArray = marksArr[i].reduce((accumulator, currentValue) => {
+//         return accumulator + currentValue;
+//     }, 0);
+
+//     sum.push(sumOfArray);
+// }
+
+// max = sum.reduce((accumulator, currentValue) => {
+//     return Math.max(accumulator, currentValue);
+// });
+
+// return max;   
