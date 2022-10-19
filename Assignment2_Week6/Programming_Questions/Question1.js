@@ -44,11 +44,11 @@ const studentWithHighestMarks = (array) => {
     }
     console.log(sumArr)
 
-    let maxValue = sumArr.reduce((accumulator, currentValue) => {
+    let highestValue = sumArr.reduce((accumulator, currentValue) => {
         return accumulator > currentValue ? accumulator : currentValue
     }, -Infinity)
 
-    return maxValue;
+    return highestValue;
 
 }
 
