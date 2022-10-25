@@ -22,7 +22,14 @@ let articles = [
         author: "Prabh",
         timeRequired: "1 minutes",
         description: "Vancouver is known for its natural beauty and its fun living here!"
-    }
+    },
+    // {
+    //     id: 3,
+    //     title: "TTG",
+    //     author: "Prabh",
+    //     timeRequired: "2 minutes",
+    //     description: "This is an article for latest technologies for example - BlockChain, IOT"
+    // }
 ]
 
 
@@ -53,7 +60,8 @@ app.get("/api/v1/posts", (req, res) => {
 
 
 // Get Endpoint for posts with given ID
-app.get("/api/v1/posts/:postId", (req, res) => {
+//localhost:5000/api/v1/posts/1
+app.get("/api/v1/posts/:postId", (req, res) => { 
     // const id = Number(req.params.postId);
 
     // const id = +req.params.id;
@@ -89,6 +97,7 @@ app.get("/api/v1/posts/:postId", (req, res) => {
 })
 
 // POST Endpoint for posts with given data
+//localhost:5000/api/v1/posts
 app.post("/api/v1/posts", (req, res) => {
     const data = req.body;
 
@@ -114,6 +123,7 @@ app.post("/api/v1/posts", (req, res) => {
 
 
 // Updating any of the post 
+//localhost:5000/api/v1/posts/1
 app.put("/api/v1/posts/:id", (req, res) => {
     const id = req.params.id;
     const postToUpdate = req.body;

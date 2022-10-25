@@ -21,9 +21,7 @@ app.get('/', (req, res) => {
 
 // We are trying to get students data from the server
 app.get('/employees', (req, res) => {
-    // For get requests we give 200 success response
-    // const data = res.status(200);
-    // return data.json(student);
+   
 
     return res.status(200).json(employeesArr);
 })

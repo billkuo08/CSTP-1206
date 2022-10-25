@@ -27,9 +27,9 @@ const missingNumber = (array, n) => {
 
 }
 
-console.log(`The missing number of the array is ${missingNumber(array1, 5)}\n`);
-// console.log(`The missing number of the array is ${missingNumber(array2, 5)}\n`);
-// console.log(`The missing number of the array is ${missingNumber(array3, 10)}\n`);
-// console.log(`The missing number of the array is ${missingNumber(array4, 10)}\n`);
+console.log(`The missing number of the array is ${missingNumber(array1, 5)}\n`);// 3
+console.log(`The missing number of the array is ${missingNumber(array2, 5)}\n`);// 5
+console.log(`The missing number of the array is ${missingNumber(array3, 10)}\n`);// 8
+console.log(`The missing number of the array is ${missingNumber(array4, 10)}\n`);// 10
 
 
