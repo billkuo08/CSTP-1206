@@ -9,14 +9,31 @@
 </head>
 
 <body>
- 
+    <h1>HotelsPro</h1>
+
     <P>Congratulation</P>
-    <% for ( let key in userData) { %>   
-    <%= userData[key] %><br>
-    <% } %>
+    <p>
+        <% for ( let key in userData) { %>
+            <% if (key !=="socials" ) { %>
+                <p>
+                    <%- userData[key] %>
+                </p>
+                <% } %>
+                    <% } %>
+
+                        <% for ( let link in userData.socials) { %>
+
+                            <a href=<%- userData.socials[link] %>>
+                                <img src=<%- link %>
+                                    width="50px" height="50px">
+
+                            </a>
+                         
+                            <% } %>
+
+    </p>
 
 
-    
 </body>
 
 </html>
