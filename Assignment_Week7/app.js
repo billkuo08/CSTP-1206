@@ -11,25 +11,24 @@ let yyyy = today.getFullYear();
 today = `${mm}/${dd}/${yyyy}`;
 let data = {
 
-    name: "Bill",
-    email: "123@gmail.com",
-    date: today,
-    contact: "1234567890",
+    name: "Name: Bill Kuo",
+    email: "Email: 123@gmail.com",
+    date: "Date account created: " + today,
+    contact: "Phone-Number: 1234567890",
 
     socials: {
 
-        "https://cdn.iconscout.com/icon/free/png-128/facebook-35-83440.png": "https://www.facebook.com/",
-
-        "https://www.clipartmax.com/png/small/83-836235_ceo-and-member-of-board-of-directors-in-naghsh-avval-linkedin-icon.png": "https://www.linkedin.com/"
+        "https://www.babysafehomes.com/wp-content/uploads/2013/07/small-blue-facebook-icon.png": "https://www.facebook.com/",
+        "https://cdn-icons-png.flaticon.com/512/174/174857.png": "https://www.linkedin.com/",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/800px-Twitter-logo.svg.png": "https://twitter.com/"
 
     }
 
 }
 
-
 app.set("view engine", "ejs");
 
-
+app.use(express.static("css"));
 
 app.get("/", (req, res) => {
 

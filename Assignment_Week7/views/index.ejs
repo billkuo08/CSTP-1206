@@ -4,36 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="style.css">
 
-    <title>Document</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <h1>HotelsPro</h1>
+    <div class="border">
 
-    <P>Congratulation</P>
-    <p>
-        <% for ( let key in userData) { %>
-            <% if (key !=="socials" ) { %>
-                <p>
-                    <%- userData[key] %>
-                </p>
-                <% } %>
+        <div class="header">
+
+            <h1><img src="https://www.pngkey.com/png/full/362-3626721_hotel-tonight-icon-hotel-tonight-app-icon.png">
+                HotelsPro</h1>
+            <h2>Luxury is cheaper than you think</h2>
+        </div>
+
+        <div class="userInfo">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" width="50px" height="50px"
+                style="margin-top:10px ">
+            <P style="margin-top: 10px;">Congratulation!<br>
+                Your account has been created</P>
+            <% for ( let key in userData) { %>
+                <% if (key !=="socials" ) { %>
+                    <p>
+                        <%- userData[key] %>
+                    </p>
                     <% } %>
+                        <% } %>
+                            <div id="message">
+                                <p>Thank you for using HotelsPro!<br>
+                                    We always strike to provide the latest, hottest and most valued
+                                    hotel options to you</p>
+                            </div>
+        </div>
 
-                        <% for ( let link in userData.socials) { %>
+        <div class="footer">
+            <% for ( let link in userData.socials) { %>
 
-                            <a href=<%- userData.socials[link] %>>
-                                <img src=<%- link %>
-                                    width="50px" height="50px">
-
-                            </a>
-                         
-                            <% } %>
-
-    </p>
+                <a href=<%- userData.socials[link] %>>
+                    <img src=<%- link %>>
+                </a>
+                <% } %>
+        </div>
 
 
+    </div>
 </body>
 
 </html>
