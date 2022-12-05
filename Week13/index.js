@@ -87,3 +87,36 @@ let studentWithVCCCollege ={
 
 console.log(studentWithVCCCollege);
 
+console.log(Math.max(1, 11, 2, 3, 4)) //this returns the maximum value
+
+let finalMaxInArray = [20, 40, 50, 100];
+
+console.log(Math.max(...finalMaxInArray));// this returns the maximum value
+
+
+// Destructuring ***************
+
+let movieObject = {
+    title:"Pirates of the Caribbean",
+    actor:"Johnny Depp",
+    actress:"Amber Heard"
+}
+
+//Extrat value from movie object
+
+let titleMovie = movieObject.title;//One way
+
+let titleMovie2 = movieObject["title"]; //Second way
+
+let {title, actor="Dwayne Johnson"} = movieObject; // Default value will be ignored here
+
+let {age = 40} = movieObject;
+
+console.log(title, actor, age);
+
+let fruitsList = ["Orange", "Mango", "Papaya", "Grapdes"];
+
+ //Default value id ignored if it already exists in the array
+let [ x, second, third="Radish", fourth, fifth="Dragonfruit" ] = fruitsList;
+
+console.log(x, second, third, fourth,fifth)
