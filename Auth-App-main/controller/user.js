@@ -101,8 +101,11 @@ const getAllUsers = async (request, response) => {
     }
 }
 
+
+
 module.exports = {
     registerUser,
     loginUser,
-    getAllUsers
+    getAllUsers,
+    
 }

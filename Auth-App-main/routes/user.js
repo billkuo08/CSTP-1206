@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 // Here we are using destructuring
-const { registerUser, loginUser, getAllUsers } = require("../controller/user");
+const { registerUser, loginUser, getAllUsers, deleteUser } = require("../controller/user");
 
 // router.get("/", userController.getAllUsers)
 
@@ -17,10 +17,11 @@ router.post("/register", registerUser)
 // // Login
 router.post("/login", loginUser)
 
+
 // router.get("/:id", userController.getUserById)
 
 // router.put("/:id", userController.updateUser)
 
-// router.delete(":/id", userController.deletUser);
+//router.delete(":/id", userController.deletUser);
 
 module.exports = router;
