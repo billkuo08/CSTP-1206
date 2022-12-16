@@ -19,10 +19,11 @@ router.post("/register", registerUser)
 // // Login
 router.post("/login", loginUser)
 
+
 // router.get("/:id", userController.getUserById)
 
 // router.put("/:id", userController.updateUser)
 
-// router.delete(":/id", userController.deletUser);
+//router.delete(":/id", userController.deletUser);
 
 module.exports = router;
