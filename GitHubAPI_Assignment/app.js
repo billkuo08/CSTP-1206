@@ -24,7 +24,7 @@ const retrieveIssues = async (name) => {
 
         let output = await response.json();
         console.log(output);
-        //Call teh formatResults function and pass in the output to display the results on the html page
+        //Call the displayResults function and pass in the output to display the results on the html page
         displayResults(output);
 
     } catch (error) {
