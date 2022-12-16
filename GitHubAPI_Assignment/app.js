@@ -1,28 +1,12 @@
 // Get the GitHub form
 function display() {
 
-    let x = document.forms["gitHub"]["username"].value;
-     
-    //const gitHubForm = document.getElementById('gitHub');
-
-    // Listen for submissions on GitHub reponame input 
-    //gitHubForm.addEventListener('submit', (e) => {
-
-        // Prevent page from refreshing
-        //n.preventDefault();
-
-        // Get the GitHub username from the input field
-        //let reponameInput = document.getElementById('reponameInput');
-
-        // Get the value of reponameInput and store in a variable called gitHubRepoName
-        //let gitHubRepoName = reponameInput.value;
+    let x = document.forms["gitHub"]["username"].value;  
 
         retrieveIssues(x);
 
-   // });
 }
 
-const token = "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";
 
 
 const retrieveIssues = async (name) => {
