@@ -1,26 +1,31 @@
 // Get the GitHub form
-const gitHubForm = document.getElementById('gitHub');
+function display() {
 
-// Listen for submissions on GitHub reponame input 
-gitHubForm.addEventListener('submit', (e) => {
+    let x = document.forms["gitHub"]["username"].value;
+     
+    //const gitHubForm = document.getElementById('gitHub');
 
-    // Prevent page from refreshing
-    e.preventDefault();
+    // Listen for submissions on GitHub reponame input 
+    //gitHubForm.addEventListener('submit', (e) => {
 
-    // Get the GitHub username from the input field
-    let reponameInput = document.getElementById('reponameInput');
+        // Prevent page from refreshing
+        //n.preventDefault();
 
-    // Get the value of reponameInput and store in a variable called gitHubRepoName
-    let gitHubRepoName = reponameInput.value;
+        // Get the GitHub username from the input field
+        //let reponameInput = document.getElementById('reponameInput');
 
-    requestReposIssues(gitHubRepoName);
+        // Get the value of reponameInput and store in a variable called gitHubRepoName
+        //let gitHubRepoName = reponameInput.value;
 
-});
+        retrieveIssues(x);
+
+   // });
+}
 
 const token = "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";
 
 
-const requestReposIssues = async (name) => {
+const retrieveIssues = async (name) => {
 
     try {
         //Use aync await to fetch the data from the GitHub API
@@ -36,14 +41,16 @@ const requestReposIssues = async (name) => {
         let output = await response.json();
         console.log(output);
         //Call teh formatResults function and pass in the output to display the results on the html page
-        formatResults(output);
+        displayResults(output);
 
     } catch (error) {
         console.log(error);
     }
 }
 
-const formatResults = (data) => {
+const displayResults = (data) => {
+
+    document.getElementById('userRepos').innerHTML = '';
 
     let card = [];
     // Use a for loop to iterate through the data
@@ -65,7 +72,7 @@ const formatResults = (data) => {
             //Use the map method to create a button for each bug tag
             //Use the html_url to link the button to the issue page
             let bugsHtml = data[i].labels.map((bug) => {
-                return `<a href="${data[i].html_url}" ><button onMouseOver="this.style.backgroundColor='white'" onMouseOut="this.style.backgroundColor='#${bug.color}'" style="background-color:#${bug.color}" type="button" >${bug.name}</button></a>`;
+                return `<a href="${data[i].html_url}"target="_blank" ><button onMouseOver="this.style.backgroundColor='white'" onMouseOut="this.style.backgroundColor='#${bug.color}'" style="background-color:#${bug.color}" type="button" >${bug.name}</button></a>`;
 
             });
             //Join the array into a string
