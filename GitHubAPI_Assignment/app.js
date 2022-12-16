@@ -44,6 +44,8 @@ const requestReposIssues = async (name) => {
 }
 
 const formatResults = (data) => {
+
+    let card = [];
     // Use a for loop to iterate through the data
     for (let i in data) {
 
@@ -55,16 +57,38 @@ const formatResults = (data) => {
 
         //Add a class to the list
         li.classList.add('list-group-item')
+        
+        //Loop through the labes array which contains all the bug tags 
+        for ( let j in data[i].labels) {
+            //Push all bug tags strings into the card array
+           card.push(data[i].labels[j].name);
+           //Use the map method to create a button for each bug tag
+           //Use the html_url to link the button to the issue page
+           let bugsHtml = data[i].labels.map((bug) =>{
+            return `<a style="min-wdith: 150px"href="${data[i].html_url}" ><button type="button">${bug.name}</button></a>`;
 
-        //console.log(data[i].title);
-        // Add the title, User and URL datas to the list
+           });
+            //Join the array into a string
+           bugsHtml = bugsHtml.join('');
+
+
+        
+        // Add the title, User and buttons to the list
         li.innerHTML = (`
             <p><strong>Title:</strong> ${data[i].title}</p>
             <p><strong>User:</strong> ${data[i].user.login}</p>
-            <p><strong>URL:</strong> <a href="${data[i].html_url}">${data[i].html_url}</a></p>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <p><strong>Bugs:</strong></p>${bugsHtml}
+            </div>                        
+        
+
         `);
+        }
+        
+        
         //Append the list to the unordered list(bullet list)
         ul.appendChild(li);
+
 
     }
 }
